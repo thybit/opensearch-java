@@ -48,6 +48,12 @@ public abstract class RequestBase {
 	protected abstract static class AbstractBuilder<BuilderT extends AbstractBuilder<BuilderT>>
 			extends
 				ObjectBuilderBase {
+
+		public final BuilderT force() {
+			_force();
+			return self();
+		}
+
 		protected abstract BuilderT self();
 
 	}

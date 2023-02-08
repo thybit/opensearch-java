@@ -1706,6 +1706,10 @@ public class Query implements TaggedUnion<Query.Kind, Object>, AggregationVarian
 			return new Query(this);
 		}
 
+		public ObjectBuilder<Query> force(){
+			_force();
+			return this;
+		}
 	}
 
 	protected static void setupQueryDeserializer(ObjectDeserializer<Builder> op) {

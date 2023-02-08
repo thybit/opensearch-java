@@ -2311,6 +2311,10 @@ public class Aggregation implements TaggedUnion<Aggregation.Kind, Object>, Jsonp
 			return new Aggregation(this);
 		}
 
+		protected void force(){
+			_force();
+		}
+
 		public class ContainerBuilder implements ObjectBuilder<Aggregation> {
 
 			/**
@@ -2371,6 +2375,11 @@ public class Aggregation implements TaggedUnion<Aggregation.Kind, Object>, Jsonp
 
 			public Aggregation build() {
 				return Builder.this.build();
+			}
+
+			public ContainerBuilder force() {
+				Builder.this.force();
+				return this;
 			}
 		}
 	}
