@@ -95,7 +95,7 @@ public class InnerHits implements JsonpSerializable {
 	@Nullable
 	private final SourceConfig source;
 
-	private final List<String> storedField;
+	private final List<String> storedFields;
 
 	@Nullable
 	private final Boolean trackScores;
@@ -120,7 +120,7 @@ public class InnerHits implements JsonpSerializable {
 		this.fields = ApiTypeHelper.unmodifiable(builder.fields);
 		this.sort = ApiTypeHelper.unmodifiable(builder.sort);
 		this.source = builder.source;
-		this.storedField = ApiTypeHelper.unmodifiable(builder.storedField);
+		this.storedFields = ApiTypeHelper.unmodifiable(builder.storedFields);
 		this.trackScores = builder.trackScores;
 		this.version = builder.version;
 
@@ -233,8 +233,8 @@ public class InnerHits implements JsonpSerializable {
 	/**
 	 * API name: {@code stored_field}
 	 */
-	public final List<String> storedField() {
-		return this.storedField;
+	public final List<String> storedFields() {
+		return this.storedFields;
 	}
 
 	/**
@@ -350,10 +350,10 @@ public class InnerHits implements JsonpSerializable {
 			this.source.serialize(generator, mapper);
 
 		}
-		if (ApiTypeHelper.isDefined(this.storedField)) {
+		if (ApiTypeHelper.isDefined(this.storedFields)) {
 			generator.writeKey("stored_field");
 			generator.writeStartArray();
-			for (String item0 : this.storedField) {
+			for (String item0 : this.storedFields) {
 				generator.write(item0);
 
 			}
@@ -420,7 +420,7 @@ public class InnerHits implements JsonpSerializable {
 		private SourceConfig source;
 
 		@Nullable
-		private List<String> storedField;
+		private List<String> storedFields;
 
 		@Nullable
 		private Boolean trackScores;
@@ -631,20 +631,20 @@ public class InnerHits implements JsonpSerializable {
 		/**
 		 * API name: {@code stored_field}
 		 * <p>
-		 * Adds all elements of <code>list</code> to <code>storedField</code>.
+		 * Adds all elements of <code>list</code> to <code>storedFields</code>.
 		 */
-		public final Builder storedField(List<String> list) {
-			this.storedField = _listAddAll(this.storedField, list);
+		public final Builder storedFields(List<String> list) {
+			this.storedFields = _listAddAll(this.storedFields, list);
 			return this;
 		}
 
 		/**
 		 * API name: {@code stored_field}
 		 * <p>
-		 * Adds one or more values to <code>storedField</code>.
+		 * Adds one or more values to <code>storedFields</code>.
 		 */
-		public final Builder storedField(String value, String... values) {
-			this.storedField = _listAdd(this.storedField, value, values);
+		public final Builder storedFields(String value, String... values) {
+			this.storedFields = _listAdd(this.storedFields, value, values);
 			return this;
 		}
 
@@ -702,7 +702,7 @@ public class InnerHits implements JsonpSerializable {
 		op.add(Builder::fields, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()), "fields");
 		op.add(Builder::sort, JsonpDeserializer.arrayDeserializer(SortOptions._DESERIALIZER), "sort");
 		op.add(Builder::source, SourceConfig._DESERIALIZER, "_source");
-		op.add(Builder::storedField, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()),
+		op.add(Builder::storedFields, JsonpDeserializer.arrayDeserializer(JsonpDeserializer.stringDeserializer()),
 				"stored_field");
 		op.add(Builder::trackScores, JsonpDeserializer.booleanDeserializer(), "track_scores");
 		op.add(Builder::version, JsonpDeserializer.booleanDeserializer(), "version");

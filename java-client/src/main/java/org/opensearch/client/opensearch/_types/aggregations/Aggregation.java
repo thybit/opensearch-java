@@ -2372,6 +2372,11 @@ public class Aggregation implements TaggedUnion<Aggregation.Kind, Object>, Jsonp
 			public Aggregation build() {
 				return Builder.this.build();
 			}
+
+			public final ContainerBuilder force() {
+				_force();
+				return this;
+			}
 		}
 	}
 

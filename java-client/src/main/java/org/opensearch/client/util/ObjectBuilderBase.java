@@ -50,6 +50,15 @@ public class ObjectBuilderBase {
         this._used = true;
     }
 
+    public <A extends ObjectBuilderBase & ObjectBuilder<?>> A force() {
+        this._force();
+        return (A)this;
+    }
+
+    public void _force() {
+        this._used = false;
+    }
+
     //----- List utilities
 
     /** A private extension of ArrayList so that we can recognize our own creations */

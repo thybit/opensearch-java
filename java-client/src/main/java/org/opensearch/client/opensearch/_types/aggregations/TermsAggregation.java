@@ -93,6 +93,9 @@ public class TermsAggregation extends BucketAggregationBase implements Aggregati
 	private final Script script;
 
 	@Nullable
+	private final SortOrder sortOrder;
+
+	@Nullable
 	private final Integer shardSize;
 
 	@Nullable
@@ -121,6 +124,7 @@ public class TermsAggregation extends BucketAggregationBase implements Aggregati
 		this.shardSize = builder.shardSize;
 		this.showTermDocCountError = builder.showTermDocCountError;
 		this.size = builder.size;
+		this.sortOrder = builder.sortOrder;
 
 	}
 
@@ -229,6 +233,11 @@ public class TermsAggregation extends BucketAggregationBase implements Aggregati
 	@Nullable
 	public final Script script() {
 		return this.script;
+	}
+
+	@Nullable
+	public final SortOrder sortOrder(){
+		return this.sortOrder;
 	}
 
 	/**
@@ -391,6 +400,9 @@ public class TermsAggregation extends BucketAggregationBase implements Aggregati
 		private Script script;
 
 		@Nullable
+		private SortOrder sortOrder;
+
+		@Nullable
 		private Integer shardSize;
 
 		@Nullable
@@ -533,6 +545,11 @@ public class TermsAggregation extends BucketAggregationBase implements Aggregati
 		 */
 		public final Builder script(Function<Script.Builder, ObjectBuilder<Script>> fn) {
 			return this.script(fn.apply(new Script.Builder()).build());
+		}
+
+		public final Builder sortOrder(SortOrder sortOrder){
+			this.sortOrder = sortOrder;
+			return this;
 		}
 
 		/**

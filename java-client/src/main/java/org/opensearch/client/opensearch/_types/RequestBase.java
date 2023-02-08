@@ -50,6 +50,11 @@ public abstract class RequestBase {
 				ObjectBuilderBase {
 		protected abstract BuilderT self();
 
+//		public final BuilderT force() {
+//			_force();
+//			return self();
+//		}
+
 	}
 
 }
